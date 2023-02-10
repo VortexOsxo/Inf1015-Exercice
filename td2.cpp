@@ -237,7 +237,6 @@ int main()
 	cout << ligneDeSeparation << "Les films sont maintenant:" << endl;
 	afficherListeFilms(listeFilms);
 
-	//TODO: Faire les appels qui manquent pour avoir 0% de lignes non exécutées dans le programme (aucune ligne rouge dans la couverture de code; c'est normal que les lignes de "new" et "delete" soient jaunes).  Vous avez aussi le droit d'effacer les lignes du programmes qui ne sont pas exécutée, si finalement vous pensez qu'elle ne sont pas utiles.
 	trouverActeur(listeFilms, "jenesuispasunacteur");
 	afficherFilmographieActeur(listeFilms, "jenesuispasunacteur");
 
