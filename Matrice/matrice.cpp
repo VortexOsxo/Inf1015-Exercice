@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <utility>
+
 class Matrice {
 public:
 	Matrice(int hauteur=3, int largeur=3) {
@@ -9,6 +11,10 @@ public:
 		for (int i = 0; i < largeur_*hauteur_; i++) {
 			données_[i] = 0.0;
 		}
+	}
+
+	std::pair<int, int> taille() const {
+		return {largeur_, hauteur_};
 	}
 
 	void afficherMatrice() const {
@@ -33,6 +39,8 @@ public:
 		return accèdeInterne(i, j);
 	}
 
+
+
 	~Matrice() {
 		delete[] données_;
 	}
@@ -53,5 +61,7 @@ int main(int argc, char* argv[])
 	Matrice mat(3,3);
 	mat.accède(2,2) = 100;
 	mat.afficherMatrice();
+	auto [largeur, hauteur] = mat.taille();
+	std::cout << "La talle de la matrice est: " << largeur << " x " << hauteur << std::endl;
 	return 0;
 }
