@@ -1,13 +1,13 @@
 #include <iostream>
+#include <fstream>
+
+using namespace std;
+
 class Fraction {
 public:
     Fraction(int numerator = 0, int denominator = 1) {
         numerator_ = numerator;
         denominator_ = denominator;
-    }
-
-    void afficherFraction() {
-        std::cout << numerator_ << "/" << denominator_ << std::endl;
     }
 
     Fraction operator+( const Fraction& autre) {
@@ -23,6 +23,7 @@ public:
     }
 
     friend Fraction operator+ (int, const Fraction&);
+    friend ostream& operator<< (ostream&, const Fraction&);
 
     int operator[] (int index) {
         if (index == 0){
@@ -38,6 +39,10 @@ private:
     int denominator_;
 };
 
+ostream& operator<< (ostream& stream, const Fraction& fraction) {
+    return stream << fraction.numerator_ << "/" << fraction.denominator_;
+}
+
 Fraction operator+ (int number, const Fraction& fraction) {
     int new_numerator = fraction.numerator_ + number * fraction.denominator_;
     return {new_numerator, fraction.denominator_};
@@ -46,7 +51,6 @@ Fraction operator+ (int number, const Fraction& fraction) {
 int main() {
     Fraction f2(3, 2);
     Fraction f3 = 3 + f2;
-    f3.afficherFraction();
-    std::cout << f3[0] << std::endl;
+    cout << f3 << endl;
     return 0;
 }
