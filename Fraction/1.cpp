@@ -24,6 +24,15 @@ public:
 
     friend Fraction operator+ (int, const Fraction&);
 
+    int operator[] (int index) {
+        if (index == 0){
+            return numerator_;
+        }
+        else {
+            return denominator_;
+        }
+    }
+
 private:
     int numerator_;
     int denominator_;
@@ -38,5 +47,6 @@ int main() {
     Fraction f2(3, 2);
     Fraction f3 = 3 + f2;
     f3.afficherFraction();
+    std::cout << f3[0] << std::endl;
     return 0;
 }
