@@ -10,6 +10,7 @@ public:
         denominator_ = denominator;
     }
 
+
     Fraction operator+( const Fraction& autre) {
         int new_numerator_ = autre.denominator_ * numerator_ + denominator_ * autre.numerator_;
         int new_denominator = autre.denominator_ * denominator_;
