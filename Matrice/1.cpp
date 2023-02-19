@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿// Code de base 
+
+#include <iostream>
 #include <utility>
 
 class Matrice {
