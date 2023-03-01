@@ -45,9 +45,4 @@ int main() {
     B e = d; // shallow copie
     e.valeurs[1].x = 9;
     afficherB(d); // La copie a copié le pointeur et non la valeur pointé, donc 'e' pointe vers le même tableau que 'd'.
-
-
-
-
-
 }
